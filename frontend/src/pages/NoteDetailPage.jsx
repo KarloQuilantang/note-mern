@@ -73,50 +73,52 @@ const NoteDetailPage = () => {
 
   return (
     <div className = "min-h-screen bg-base-200">
-      <div className = "container mx-auto px-4 py-8">
+      <div className = "container mx-auto px-4 py-8 ">
         <div className="max-w-2xl mx-auto">
-          <div className = "flex items-center justify-between mb-6">
-            <Link to ="/" className = "btn btn-ghost">
+          <div className = "flex items-center justify-between mb-2 ">
+            <Link to ="/" className = "btn btn-ghost rounded-3xl">
               <ArrowLeftCircleIcon className = "h-5 w-5"/>
               Back to Notes
             </Link>
-            <button onClick ={handleDelete} className = "btn btn-error btn-outLine">
-              <Trash2Icon className = "h-5 w-5"/>
-              Delete Note
-            </button>
+            
           </div>
           
-          <div className="card bg-base-100">
+          <div className="card bg-base-100 rounded-3xl">
             <div className="card-body">
-              <div className = "form-control mb-4">
+              <div className = "form-control mb-1">
                 <label className = "label">
                   <span className = "label-text">Title</span>
                 </label>
                 <input
                   type = "text"
                   placeholder = "Note title"
-                  className = "input input-bordered"
+                  className = "input input-bordered rounded-3xl"
                   value={note.title}
                   onChange ={(e) => setNote({...note,title: e.target.value})}
                   />
               </div>
 
-              <div className="form-control mb-4">
+              <div className="form-control mb-1">
                 <label className ="label">
                   <span className="label-text">Content</span>
                 </label>
                 <textarea
                   placeholder ="Write your note here..."
-                  className = "textarea textarea-border h-32"
+                  className = "textarea textarea-bordered h-32 rounded-3xl"
                   value = {note.content}
                   onChange={(e) => setNote({ ...note, content: e.target.value })}
                 />
               </div>
 
-              <div className = "card-actions justify-end">
-                <button className ="btn btn-primary" disabled={saving} onClick={handleSave}>
+              <div className = "card-actions justify-between ">
+                <button onClick ={handleDelete} className = "btn btn-outline btn-error rounded-3xl">
+                  <Trash2Icon className = "h-5 w-5"/>
+                  Delete Note
+                </button>
+                <button className ="btn btn-soft rounded-3xl" disabled={saving} onClick={handleSave}>
                   {saving ? "Saving...": "Save Changes"}
                 </button>
+
               </div>
             </div>
           </div>

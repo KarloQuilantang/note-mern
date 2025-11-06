@@ -7,7 +7,7 @@ import NoteDetailPage from "./pages/NoteDetailPage"
 const App = () => {
   return (
   <div className = "relative h-full w-full"> 
-    <div className = "absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 bg-black"/> 
+    <div className = "absolute inset-0 -z-10 h-full w-full items-center px-5 py-2 bg-stone-200"/> 
     <Routes>
       <Route path ="/" element = {<HomePage />}/>
       <Route path ="/create" element = {<CreatePage />}/>
